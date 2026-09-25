@@ -1,5 +1,1 @@
-# Lab 2
-
-Instructions for this section will be provided in class and on Blackboard when we reach it.
-
-Put your work for Lab 2 in this folder.
+The command systemctl start initiates a service for the current session, while systemctl enable configures the service to automatically start upon system boot.

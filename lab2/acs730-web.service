@@ -1,0 +1,12 @@
+[Unit]
+Description=ACS730 Python Web Application
+After=network.target
+
+[Service]
+User=webapp
+WorkingDirectory=/home/webapp
+ExecStart=/usr/bin/python3 -m http.server 8080
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
