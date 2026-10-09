@@ -8,8 +8,11 @@ This course uses temporary session credentials because AWS Academy blocks settin
 
 ### Experiment 1: Let Credentials Expire
 Prediction: The `Configure AWS credentials` or `terraform plan` step will fail with an expired token error because AWS temporary security credentials timed out.
+
 Result: The `terraform plan` step failed with `Error: ExpiredToken: The security token included in the request is expired`. After starting a new AWS session and running `./scripts/refresh-gha-creds.sh`, the workflow re-ran successfully without requiring any code or file changes in the repository.
 
-### Experiment 2: Remove AWS_REGION Variable
-Prediction: Removing `AWS_REGION` from GitHub repository variables will cause `terraform init` to crash with a critical authentication failure because Terraform cannot locate AWS.
-Result: The workflow did not crash on authentication, but instead failed early during the `Configure AWS credentials` action with the error `Input required and not supplied: aws-region`. The region is a required runner configuration parameter rather than a direct Terraform provider error.
+### Experiment 2: Remove the S3 Backend
+Prediction: If we remove the S3 backend from Terraform, GitHub Actions won't know where our existing infrastructure is saved and will try to build everything again from scratch.
+
+Result: Terraform creates a local `terraform.tfstate` file on your machine instead of using S3. Because GitHub Actions runs on a temporary cloud runner that doesn't have this local file, it loses track of existing AWS resources and attempts to re-create them.
+
