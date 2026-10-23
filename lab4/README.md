@@ -46,4 +46,10 @@ Images are tagged with the commit SHA instead of latest to track the exact code 
 
 ## Experiments
 
+Experiment 1: Inverting the Layer Order
+- **Prediction:** I figured that if I copy `app.py` before installing dependencies, any tiny change to the code would trick Docker into breaking the cache early and re-installing all the Python packages from scratch.
+- **Explanation:** When I tested it, changing a single character forced Docker to re-run the whole `pip install` step instead of using cached layers, making the rebuild way slower. This proves that file ordering completely controls how well Docker caching works.
 
+Experiment 2: Deleting `.dockerignore`
+- **Prediction:** I guessed the container image would probably get bigger because without `.dockerignore`, all sorts of hidden git files and local junk would get dragged into the build context.
+- **Explanation:** Sure enough, the build context grew noticeably and extra workspace files popped up when looking inside the container root. Leaving it out means random local workspace clutter gets bundled straight into your image.
