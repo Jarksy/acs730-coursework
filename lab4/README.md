@@ -20,3 +20,8 @@
 | **Pip Install Step** | 8s | 11s | 10s | Yes – saves time by not downloading python packages again. |
 | **Docker Build Step** | 24s | 34s | 22s | Yes – builds faster by reusing saved parts. |
 | **Whole Workflow (Wall Clock)** | 66s | 72s | 74s | Yes – keeps total run times steady and reliable. |
+
+## Pipeline Design Choices
+
+- The dependency setup is an action because its steps must run on the same runner as the tests.
+- The image build is a workflow because it is a whole job needing `packages: write` permissions that the test job must not have.
