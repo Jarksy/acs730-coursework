@@ -4,3 +4,5 @@
 .terraform/
 .env
 credentials
+__pycache__/
+*/__pycache__/
