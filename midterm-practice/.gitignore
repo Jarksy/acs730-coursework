@@ -6,3 +6,5 @@ __pycache__/
 # Editors
 .vscode/
 .idea/
+*.tfstate
+*.tfstate.backup
