@@ -4,6 +4,16 @@
 # directory and does not care about the names.
 #
 # This configuration does not currently pass `terraform validate`. Tasks 3 and 4.
+terraform {
+  required_version = ">= 1.10.0"
+
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.60"
+    }
+  }
+}
 
 variable "aws_region" {
   description = "Region to deploy into. LocalStack ignores it, but the provider still requires one."
