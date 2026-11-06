@@ -6,3 +6,8 @@
 credentials
 __pycache__/
 */__pycache__/
+.terraform/
+*.tfstate
+*.tfstate.*
+tfplan
+crash.log
