@@ -1,0 +1,29 @@
+
+PLAY [Configure the ACS730 Lab 6 web servers] **********************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [i-077d87eb4a0ae9b93]
+ok: [i-0c131abad27013062]
+
+TASK [webserver : Install the packages the application needs] ******************
+ok: [i-077d87eb4a0ae9b93]
+ok: [i-0c131abad27013062]
+
+TASK [webserver : Create the unprivileged service account] *********************
+ok: [i-077d87eb4a0ae9b93]
+ok: [i-0c131abad27013062]
+
+TASK [webserver : Create the application directory] ****************************
+ok: [i-0c131abad27013062]
+ok: [i-077d87eb4a0ae9b93]
+
+TASK [webserver : Render the landing page from a template] *********************
+An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+fatal: [i-077d87eb4a0ae9b93]: FAILED! => {"changed": false, "msg": "Could not find or access 'index.html.j2'\nSearched in:\n\t/home/ec2-user/acs730-coursework/lab6/ansible/roles/webserver/templates/index.html.j2\n\t/home/ec2-user/acs730-coursework/lab6/ansible/roles/webserver/index.html.j2\n\t/home/ec2-user/acs730-coursework/lab6/ansible/roles/webserver/tasks/templates/index.html.j2\n\t/home/ec2-user/acs730-coursework/lab6/ansible/roles/webserver/tasks/index.html.j2\n\t/home/ec2-user/acs730-coursework/lab6/ansible/templates/index.html.j2\n\t/home/ec2-user/acs730-coursework/lab6/ansible/index.html.j2 on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+fatal: [i-0c131abad27013062]: FAILED! => {"changed": false, "msg": "Could not find or access 'index.html.j2'\nSearched in:\n\t/home/ec2-user/acs730-coursework/lab6/ansible/roles/webserver/templates/index.html.j2\n\t/home/ec2-user/acs730-coursework/lab6/ansible/roles/webserver/index.html.j2\n\t/home/ec2-user/acs730-coursework/lab6/ansible/roles/webserver/tasks/templates/index.html.j2\n\t/home/ec2-user/acs730-coursework/lab6/ansible/roles/webserver/tasks/index.html.j2\n\t/home/ec2-user/acs730-coursework/lab6/ansible/templates/index.html.j2\n\t/home/ec2-user/acs730-coursework/lab6/ansible/index.html.j2 on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+
+PLAY RECAP *********************************************************************
+i-077d87eb4a0ae9b93        : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+i-0c131abad27013062        : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
