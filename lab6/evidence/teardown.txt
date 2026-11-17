@@ -1,0 +1,22 @@
+
+== EC2 instances
+   i-0de74a764425d6340  running  t3.micro  acs730-workstation   (your workstation -- keep this)
+
+== Your AMIs (and their snapshots)
+
+== Unattached EBS volumes
+
+== Snapshots you own
+
+== Non-default security groups
+   sg-0cee5333648710aaf  acs730-lab6-sg
+      -> aws ec2 delete-security-group --group-id sg-0cee5333648710aaf
+   sg-0424829184f00d26d  launch-wizard-1
+      -> aws ec2 delete-security-group --group-id sg-0424829184f00d26d
+
+== Terraform state files that still track resources
+   ./midterm-practice/terraform/terraform.tfstate  tracks 1 resource(s)
+      -> cd ./midterm-practice/terraform && terraform destroy
+
+Review the items above. This script deleted nothing.
+
