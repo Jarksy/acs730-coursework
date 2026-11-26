@@ -1,0 +1,35 @@
+6s
+Run terraform -chdir=assignment1/terraform/staging apply -auto-approve
+  terraform -chdir=assignment1/terraform/staging apply -auto-approve
+  shell: /usr/bin/bash -e {0}
+  env:
+    AWS_ACCESS_KEY_ID: ***
+    AWS_SECRET_ACCESS_KEY: ***
+    AWS_SESSION_TOKEN: ***
+    AWS_DEFAULT_REGION: us-east-1
+    TERRAFORM_CLI_PATH: /home/runner/work/_temp/8d3f4377-df9f-4aaa-9d06-29ab72fb083a
+module.app_stack.data.aws_ssm_parameter.app_config: Reading...
+module.app_stack.data.aws_ami.al2023: Reading...
+module.app_stack.aws_vpc.main: Refreshing state... [id=vpc-0639c1039c462502a]
+module.app_stack.data.aws_ssm_parameter.app_config: Read complete after 1s [id=/assignment1/app/db_password]
+module.app_stack.data.aws_ami.al2023: Read complete after 1s [id=ami-062caee4b7b602eb0]
+module.app_stack.aws_subnet.this["subnet_a"]: Refreshing state... [id=subnet-0165aeac7ba612f4f]
+module.app_stack.aws_security_group.app: Refreshing state... [id=sg-0c1db1d688b0012aa]
+module.app_stack.aws_instance.app: Refreshing state... [id=i-0966fc841372bf060]
+module.app_stack.aws_cloudwatch_metric_alarm.high_cpu: Refreshing state... [id=acs730-a1-staging-high-cpu]
+
+No changes. Your infrastructure matches the configuration.
+
+Terraform has compared your real infrastructure against your configuration
+and found no differences, so no changes are needed.
+
+Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+cloudwatch_alarm_name = "acs730-a1-staging-high-cpu"
+instance_id = "i-0966fc841372bf060"
+subnet_ids = {
+  "subnet_a" = "subnet-0165aeac7ba612f4f"
+}
+vpc_id = "vpc-0639c1039c462502a"

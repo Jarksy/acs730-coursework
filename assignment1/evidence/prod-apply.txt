@@ -1,0 +1,34 @@
+Run terraform -chdir=assignment1/terraform/prod apply -auto-approve
+  terraform -chdir=assignment1/terraform/prod apply -auto-approve
+  shell: /usr/bin/bash -e {0}
+  env:
+    AWS_ACCESS_KEY_ID: ***
+    AWS_SECRET_ACCESS_KEY: ***
+    AWS_SESSION_TOKEN: ***
+    AWS_DEFAULT_REGION: us-east-1
+    TERRAFORM_CLI_PATH: /home/runner/work/_temp/1b81cbb6-12da-42d8-924e-76de07e11d81
+module.app_stack.data.aws_ami.al2023: Reading...
+module.app_stack.data.aws_ssm_parameter.app_config: Reading...
+module.app_stack.aws_vpc.main: Refreshing state... [id=vpc-0537a2a57a0dae1ad]
+module.app_stack.data.aws_ssm_parameter.app_config: Read complete after 0s [id=/assignment1/app/db_password]
+module.app_stack.data.aws_ami.al2023: Read complete after 1s [id=ami-062caee4b7b602eb0]
+module.app_stack.aws_subnet.this["subnet_a"]: Refreshing state... [id=subnet-0dc01280fa77bff86]
+module.app_stack.aws_security_group.app: Refreshing state... [id=sg-0e07dd61659d4c224]
+module.app_stack.aws_instance.app: Refreshing state... [id=i-04cb8fca3df615a97]
+module.app_stack.aws_cloudwatch_metric_alarm.high_cpu: Refreshing state... [id=acs730-a1-prod-high-cpu]
+
+No changes. Your infrastructure matches the configuration.
+
+Terraform has compared your real infrastructure against your configuration
+and found no differences, so no changes are needed.
+
+Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+cloudwatch_alarm_name = "acs730-a1-prod-high-cpu"
+instance_id = "i-04cb8fca3df615a97"
+subnet_ids = {
+  "subnet_a" = "subnet-0dc01280fa77bff86"
+}
+vpc_id = "vpc-0537a2a57a0dae1ad"
