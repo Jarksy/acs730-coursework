@@ -1,0 +1,6 @@
+@all:
+  |--@ungrouped:
+  |--@aws_ec2:
+  |  |--ec2-18-232-129-46.compute-1.amazonaws.com
+  |--@tag_Role_a2_web:
+  |  |--ec2-18-232-129-46.compute-1.amazonaws.com

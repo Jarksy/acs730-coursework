@@ -1,0 +1,15 @@
+---
+plugin: amazon.aws.aws_ec2
+regions:
+  - us-east-1
+filters:
+  instance-state-name:
+    - running
+  "tag:Role":
+    - a2-web
+keyed_groups:
+  - key: tags.Role
+    prefix: tag_Role
+    separator: "_"
+compose:
+  ansible_host: instance_id

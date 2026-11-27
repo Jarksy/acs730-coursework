@@ -1,0 +1,28 @@
+---
+- name: Install web server package
+  ansible.builtin.package:
+    name: "{{ webserver_pkg_name }}"
+    state: present
+
+- name: Ensure web root directory exists
+  ansible.builtin.file:
+    path: /usr/share/nginx/html
+    state: directory
+    owner: root
+    group: root
+    mode: "0755"
+
+- name: Render web index page from template
+  ansible.builtin.template:
+    src: index.html.j2
+    dest: /usr/share/nginx/html/index.html
+    owner: root
+    group: root
+    mode: "0644"
+  notify: Restart webserver service
+
+- name: Ensure web server service is started and enabled
+  ansible.builtin.service:
+    name: "{{ webserver_service_name }}"
+    state: started
+    enabled: true

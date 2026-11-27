@@ -1,0 +1,6 @@
+---
+webserver_pkg_name: nginx
+webserver_service_name: nginx
+webserver_http_port: 80
+webserver_app_env: staging
+webserver_banner_message: "ACS730 Assignment 2 Web Service"

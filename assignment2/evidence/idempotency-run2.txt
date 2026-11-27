@@ -1,0 +1,21 @@
+
+PLAY [Configure web server nodes via dynamic inventory] ************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [ec2-18-232-129-46.compute-1.amazonaws.com]
+
+TASK [webserver : Install web server package] **********************************
+ok: [ec2-18-232-129-46.compute-1.amazonaws.com]
+
+TASK [webserver : Ensure web root directory exists] ****************************
+ok: [ec2-18-232-129-46.compute-1.amazonaws.com]
+
+TASK [webserver : Render web index page from template] *************************
+ok: [ec2-18-232-129-46.compute-1.amazonaws.com]
+
+TASK [webserver : Ensure web server service is started and enabled] ************
+ok: [ec2-18-232-129-46.compute-1.amazonaws.com]
+
+PLAY RECAP *********************************************************************
+ec2-18-232-129-46.compute-1.amazonaws.com : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ACS730 Assignment 2 Web Service</title>
+</head>
+<body>
+  <h1>ACS730 Assignment 2 Web Service</h1>
+  <p>Environment: staging</p>
+  <p>Port: 80</p>
+</body>
+</html>
+
