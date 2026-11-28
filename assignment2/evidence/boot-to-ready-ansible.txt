@@ -1,0 +1,4 @@
+Method: Terraform apply + SSM wait + Ansible converge
+Start clock position (UTC): 2026-11-28T00:19:07Z
+End clock position (first HTTP 200, UTC): 2026-11-28T00:22:15Z
+Measured duration: 181 seconds

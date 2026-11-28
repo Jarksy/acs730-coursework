@@ -1,0 +1,5 @@
+Method: Golden AMI boot (pre-baked image, no runtime Ansible converge)
+AMI ID: ami-0ce6ddfd53d2e9485
+Start clock position (UTC): 2026-11-28T01:36:30Z
+End clock position (first HTTP 200, UTC): 2026-11-28T01:37:07Z
+Measured duration: 37 seconds

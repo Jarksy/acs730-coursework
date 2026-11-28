@@ -1,0 +1,54 @@
+{
+    "Images": [
+        {
+            "PlatformDetails": "Linux/UNIX",
+            "UsageOperation": "RunInstances",
+            "BlockDeviceMappings": [
+                {
+                    "Ebs": {
+                        "DeleteOnTermination": true,
+                        "Iops": 3000,
+                        "SnapshotId": "snap-07bafba7f00456859",
+                        "VolumeSize": 8,
+                        "VolumeType": "gp3",
+                        "Throughput": 125,
+                        "Encrypted": false
+                    },
+                    "DeviceName": "/dev/xvda"
+                }
+            ],
+            "EnaSupport": true,
+            "Hypervisor": "xen",
+            "Name": "acs730-a2-golden-web-1795829463",
+            "RootDeviceName": "/dev/xvda",
+            "RootDeviceType": "ebs",
+            "SriovNetSupport": "simple",
+            "Tags": [
+                {
+                    "Key": "Name",
+                    "Value": "acs730-a2-golden-web"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "acs730-assignment2"
+                }
+            ],
+            "VirtualizationType": "hvm",
+            "BootMode": "uefi-preferred",
+            "ImdsSupport": "v2.0",
+            "SourceInstanceId": "i-01c152968647302f2",
+            "DeregistrationProtection": "disabled",
+            "SourceImageId": "ami-02771ddfb8e749b97",
+            "SourceImageRegion": "us-east-1",
+            "FreeTierEligible": true,
+            "ImageId": "ami-0ce6ddfd53d2e9485",
+            "ImageLocation": "936666204674/acs730-a2-golden-web-1795829463",
+            "State": "available",
+            "OwnerId": "936666204674",
+            "CreationDate": "2026-11-28T01:32:35.000Z",
+            "Public": false,
+            "Architecture": "x86_64",
+            "ImageType": "machine"
+        }
+    ]
+}
