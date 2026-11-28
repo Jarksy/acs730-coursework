@@ -6,8 +6,14 @@ terraform {
       source  = "hashicorp/aws"
       version = "~> 5.60"
     }
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.6"
+    }
   }
 }
+
+
 
 provider "aws" {
   region = var.aws_region
@@ -48,8 +54,12 @@ data "aws_iam_instance_profile" "lab" {
   name = "LabInstanceProfile"
 }
 
+resource "random_id" "sg_suffix" {
+  byte_length = 2
+}
+
 resource "aws_security_group" "web" {
-  name        = "${var.name_prefix}-web-sg"
+  name        = "${var.name_prefix}-web-sg-${random_id.sg_suffix.hex}"
   description = "Allow HTTP port 80 inbound and all outbound; no SSH port 22"
   vpc_id      = data.aws_vpc.default.id
 
